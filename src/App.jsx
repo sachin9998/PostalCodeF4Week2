@@ -1,13 +1,15 @@
 import { useState } from "react";
 import "./App.css";
-import PinInput from "./component/PinInput";
+
 import Details from "./component/Details";
+import PinInput from "./component/PinInput";
 
 function App() {
   const [searchParam, setSearchParam] = useState(null);
   const [isFetch, setIsFetch] = useState(false);
   const [response, setResponse] = useState(null);
   const [loader, setLoader] = useState(false);
+
   return (
     <div className="App">
       {!isFetch ? (
@@ -20,9 +22,10 @@ function App() {
       ) : (
         <Details searchParam={searchParam} response={response} />
       )}
+
       {loader && (
         <center>
-          <div class="loader"></div>
+          <div className="loader"></div>
         </center>
       )}
     </div>
